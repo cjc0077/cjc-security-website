@@ -1,0 +1,17 @@
+{
+  "name": "cjc-security-website",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "lint": "node --check api/chat.js && node --check lib/orchestrator.js && node --check lib/system-prompt.js && node --check js/chatbot.js",
+    "test": "node --test test/",
+    "models": "node scripts/list-models.mjs",
+    "smoke": "node scripts/smoke-test.mjs"
+  },
+  "dependencies": {
+    "openai": "^7.55.0"
+  }
+}

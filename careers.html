@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Careers | CJC Security & Investigation LLC</title>
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <meta name="description" content="Join the CJC Security & Investigation LLC team. Download our fillable employment application. Licensed security officers and investigators welcome — serving the Rio Grande Valley, TX." />
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .page-hero {
+      background: var(--color-iron);
+      padding-block: clamp(var(--space-16), 12vw, var(--space-32));
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 50% 50%, color-mix(in oklab, var(--color-gold) 6%, transparent), transparent 70%);
+    }
+    .page-hero-content { position: relative; z-index: 1; }
+    .page-hero h1 { font-size: var(--text-2xl); color: #fff; margin-bottom: var(--space-4); }
+    .page-hero h1 .gold { color: var(--color-gold); }
+    .page-hero p { font-size: var(--text-lg); color: color-mix(in oklab, #fff 65%, transparent); max-width: 55ch; margin-inline: auto; }
+
+    /* ── Why Join section ── */
+    .why-join { padding-block: clamp(var(--space-12), 8vw, var(--space-24)); }
+    .perks-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-6);
+      margin-top: var(--space-12);
+    }
+    .perk-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+    .perk-icon {
+      width: 48px; height: 48px;
+      background: color-mix(in oklab, var(--color-primary) 10%, transparent);
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-primary);
+    }
+    .perk-card h3 { font-size: var(--text-base); font-weight: 700; color: var(--color-text); }
+    .perk-card p { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.6; }
+
+    /* ── Open Positions ── */
+    .positions-section { padding-block: clamp(var(--space-12), 8vw, var(--space-24)); background: var(--color-surface); }
+    .positions-list { display: flex; flex-direction: column; gap: var(--space-4); margin-top: var(--space-10); }
+    .position-card {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6) var(--space-8);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-6);
+      flex-wrap: wrap;
+      transition: border-color var(--transition-interactive), transform var(--transition-interactive);
+    }
+    .position-card:hover { border-color: color-mix(in oklab, var(--color-primary) 40%, transparent); transform: translateY(-2px); }
+    .position-info { flex: 1; min-width: 200px; }
+    .position-title { font-family: var(--font-display); font-size: var(--text-lg); font-weight: 700; color: var(--color-text); margin-bottom: var(--space-2); }
+    .position-meta { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+    .position-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-1);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      color: var(--color-text-muted);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius-full);
+    }
+    .position-tag.highlight { color: var(--color-primary); border-color: color-mix(in oklab, var(--color-primary) 30%, transparent); background: color-mix(in oklab, var(--color-primary) 8%, transparent); }
+    .apply-btn-sm {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      background: var(--color-primary);
+      color: var(--color-iron);
+      font-weight: 700;
+      font-size: var(--text-sm);
+      letter-spacing: 0.04em;
+      padding: var(--space-3) var(--space-6);
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .apply-btn-sm:hover { background: var(--color-gold-light, #f0c842); }
+
+    /* ── Application CTA ── */
+    .apply-section {
+      background: var(--color-iron);
+      padding-block: clamp(var(--space-16), 10vw, var(--space-32));
+      position: relative;
+      overflow: hidden;
+    }
+    .apply-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 50% 50%, color-mix(in oklab, var(--color-gold) 7%, transparent), transparent 70%);
+    }
+    .apply-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-16);
+      align-items: center;
+    }
+    .apply-left h2 { font-size: var(--text-2xl); color: #fff; margin-bottom: var(--space-5); }
+    .apply-left h2 .gold { color: var(--color-gold); }
+    .apply-left p { font-size: var(--text-base); color: color-mix(in oklab, #fff 65%, transparent); line-height: 1.7; margin-bottom: var(--space-6); max-width: 48ch; }
+
+    .required-docs {
+      background: color-mix(in oklab, #fff 4%, transparent);
+      border: 1px solid color-mix(in oklab, var(--color-gold) 20%, transparent);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6) var(--space-8);
+      margin-bottom: var(--space-8);
+    }
+    .required-docs h4 {
+      font-family: var(--font-display);
+      font-size: var(--text-sm);
+      font-weight: 700;
+      color: var(--color-gold);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: var(--space-4);
+    }
+    .doc-list { display: flex; flex-direction: column; gap: var(--space-3); }
+    .doc-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+      font-size: var(--text-sm);
+      color: color-mix(in oklab, #fff 70%, transparent);
+      line-height: 1.5;
+    }
+    .doc-item::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--color-gold);
+      flex-shrink: 0;
+      margin-top: 6px;
+    }
+    .apply-actions { display: flex; flex-wrap: wrap; gap: var(--space-4); }
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-3);
+      background: var(--color-gold);
+      color: var(--color-iron);
+      font-weight: 700;
+      font-size: var(--text-sm);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: var(--space-4) var(--space-8);
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      box-shadow: 0 4px 20px color-mix(in oklab, var(--color-gold) 35%, transparent);
+    }
+    .download-btn:hover { background: var(--color-gold-light, #f0c842); transform: translateY(-1px); }
+
+    /* ── Online Application Form ── */
+    .online-apply-section {
+      background: var(--color-bg);
+      padding-block: clamp(var(--space-16), 10vw, var(--space-32));
+    }
+    .online-apply-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: clamp(var(--space-8), 5vw, var(--space-16));
+    }
+    .online-apply-wrap h2 { font-size: var(--text-2xl); color: var(--color-text); margin-bottom: var(--space-3); }
+    .online-apply-wrap h2 .gold { color: var(--color-gold); }
+    .online-apply-wrap > p.lead { font-size: var(--text-base); color: var(--color-text-muted); margin-bottom: var(--space-8); max-width: 60ch; }
+    .apply-form .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5); margin-bottom: var(--space-5); }
+    .apply-form .form-group { display: flex; flex-direction: column; margin-bottom: var(--space-5); }
+    .apply-form .form-row .form-group { margin-bottom: 0; }
+    .apply-form label {
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-2);
+    }
+    .apply-form .required { color: var(--color-gold); }
+    .apply-form input, .apply-form select, .apply-form textarea {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: var(--space-3) var(--space-4);
+      font-size: var(--text-base);
+      color: var(--color-text);
+      font-family: inherit;
+      transition: border-color .15s;
+    }
+    .apply-form input:focus, .apply-form select:focus, .apply-form textarea:focus {
+      outline: none;
+      border-color: var(--color-gold);
+    }
+    .apply-form input.invalid, .apply-form select.invalid, .apply-form textarea.invalid {
+      border-color: #f87171;
+    }
+    .apply-form textarea { resize: vertical; min-height: 120px; }
+    .apply-form .field-error {
+      font-size: var(--text-xs);
+      color: #f87171;
+      margin-top: var(--space-1);
+      min-height: 1em;
+    }
+    .apply-form .form-note {
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      margin-top: var(--space-1);
+    }
+    .apply-submit {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-3);
+      background: var(--color-gold);
+      color: var(--color-iron);
+      font-weight: 700;
+      font-size: var(--text-sm);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: var(--space-4) var(--space-10);
+      border-radius: var(--radius-md);
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 20px color-mix(in oklab, var(--color-gold) 35%, transparent);
+      margin-top: var(--space-4);
+    }
+    .apply-submit:hover:not(:disabled) { background: var(--color-gold-light, #f0c842); transform: translateY(-1px); }
+    .apply-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+    .apply-success {
+      display: none;
+      text-align: center;
+      padding: var(--space-12) var(--space-6);
+    }
+    .apply-success.visible { display: block; }
+    .apply-success .check-circle {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: color-mix(in oklab, var(--color-gold) 15%, transparent);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto var(--space-6);
+      color: var(--color-gold);
+    }
+    .apply-success h4 { font-size: var(--text-xl); color: var(--color-text); margin-bottom: var(--space-3); }
+    .apply-success p { color: var(--color-text-muted); max-width: 40ch; margin: 0 auto; }
+    @media (max-width: 720px) {
+      .apply-form .form-row { grid-template-columns: 1fr; }
+    }
+
+    /* PDF preview card */
+    .pdf-preview-card {
+      background: color-mix(in oklab, #fff 4%, transparent);
+      border: 1px solid color-mix(in oklab, var(--color-gold) 25%, transparent);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-5);
+      text-align: center;
+    }
+    .pdf-icon {
+      width: 72px; height: 72px;
+      background: color-mix(in oklab, var(--color-gold) 12%, transparent);
+      border-radius: var(--radius-xl);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-gold);
+    }
+    .pdf-preview-card h3 { font-size: var(--text-lg); color: #fff; }
+    .pdf-preview-card p { font-size: var(--text-sm); color: color-mix(in oklab, #fff 55%, transparent); max-width: 32ch; }
+    .pdf-pages {
+      display: flex;
+      gap: var(--space-3);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .pdf-page-badge {
+      background: color-mix(in oklab, #fff 6%, transparent);
+      border: 1px solid color-mix(in oklab, #fff 15%, transparent);
+      border-radius: var(--radius-md);
+      padding: var(--space-2) var(--space-4);
+      font-size: var(--text-xs);
+      color: color-mix(in oklab, #fff 60%, transparent);
+    }
+
+    /* Steps */
+    .how-to-apply { padding-block: clamp(var(--space-12), 8vw, var(--space-24)); }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-6);
+      margin-top: var(--space-12);
+      position: relative;
+    }
+    .steps-grid::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: calc(12.5% + var(--space-6));
+      right: calc(12.5% + var(--space-6));
+      height: 1px;
+      background: var(--color-border);
+    }
+    .step-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: var(--space-4);
+      position: relative;
+    }
+    .step-num {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: var(--color-iron);
+      border: 2px solid var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      font-weight: 700;
+      color: var(--color-primary);
+      z-index: 1;
+      flex-shrink: 0;
+    }
+    .step-card h4 { font-family: var(--font-display); font-size: var(--text-base); font-weight: 700; color: var(--color-text); }
+    .step-card p { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.6; max-width: 22ch; margin-inline: auto; }
+
+    @media (max-width: 900px) {
+      .perks-grid { grid-template-columns: 1fr 1fr; }
+      .apply-inner { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr 1fr; }
+      .steps-grid::before { display: none; }
+    }
+    @media (max-width: 560px) {
+      .perks-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo" aria-label="CJC Security Home">
+      <img src="images/cjc-logo-2026-sm.png" alt="CJC Security &amp; Investigation LLC" class="logo-img" />
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="regions.html" class="nav-link">Service Areas</a>
+    <a href="gallery.html" class="nav-link">Gallery</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="careers.html" class="nav-link active">Careers</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="contact.html" class="nav-cta">Deploy Now</a>
+    </nav>
+    <button class="theme-toggle" data-theme-toggle aria-label="Toggle theme">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+    </button>
+    <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="services.html" class="nav-link">Services</a>
+    <a href="regions.html" class="nav-link">Service Areas</a>
+    <a href="gallery.html" class="nav-link">Gallery</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="careers.html" class="nav-link active">Careers</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+    <a href="contact.html" class="nav-cta">Deploy Now</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container--narrow">
+    <div class="page-hero-content">
+      <span class="section-label" style="color:var(--color-gold);">Join Our Team</span>
+      <h1>Careers at <span class="gold">CJC Security</span></h1>
+      <p>We're looking for dedicated, licensed security professionals who share our commitment to excellence, integrity, and service to the Rio Grande Valley community.</p>
+    </div>
+  </div>
+</section>
+
+<main>
+
+  <!-- WHY JOIN -->
+  <section class="why-join" aria-labelledby="why-join-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Why Work With Us</span>
+        <h2 class="section-title" id="why-join-heading">A Team Built on Excellence</h2>
+        <p class="section-subtitle">CJC Security holds its officers to the same standard as law enforcement — because that's where we come from.</p>
+      </div>
+      <div class="perks-grid">
+        <div class="perk-card">
+          <div class="perk-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Professional Environment</h3>
+          <p>Work alongside experienced law enforcement veterans who lead by example and invest in your growth.</p>
+        </div>
+        <div class="perk-card">
+          <div class="perk-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <h3>Flexible Scheduling</h3>
+          <p>Full-time, part-time, on-call, and weekend positions available. Day, evening, and overnight shifts.</p>
+        </div>
+        <div class="perk-card">
+          <div class="perk-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+          </div>
+          <h3>Locally Rooted</h3>
+          <p>Serve your community right here in the Rio Grande Valley. We're proud to keep our team local.</p>
+        </div>
+        <div class="perk-card">
+          <div class="perk-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          <h3>Continuous Training</h3>
+          <p>We invest in ongoing training beyond state minimums — use of force, de-escalation, and specialized certification support.</p>
+        </div>
+        <div class="perk-card">
+          <div class="perk-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3>Competitive Pay</h3>
+          <p>Competitive hourly rates based on experience, license level, and assignment type. Armed positions earn premium rates.</p>
+        </div>
+        <div class="perk-card">
+          <div class="perk-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </div>
+          <h3>Growth Opportunities</h3>
+          <p>Advancement pathways into supervisory, investigative, and specialized security roles as we expand across the RGV.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPEN POSITIONS -->
+  <section class="positions-section" aria-labelledby="positions-heading">
+    <div class="container">
+      <span class="section-label">Now Hiring</span>
+      <h2 class="section-title" id="positions-heading">Open Positions</h2>
+      <p class="section-subtitle">All positions require a valid Texas DPS security officer license. See application for full requirements.</p>
+      <div class="positions-list">
+
+        <div class="position-card">
+          <div class="position-info">
+            <div class="position-title">Armed Security Officer</div>
+            <div class="position-meta">
+              <span class="position-tag highlight">Level III Licensed</span>
+              <span class="position-tag">Full-Time / Part-Time</span>
+              <span class="position-tag">Rio Grande Valley</span>
+            </div>
+          </div>
+          <a href="CJC_Security_Fillable_Application.pdf" download class="apply-btn-sm">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Apply Now
+          </a>
+        </div>
+
+        <div class="position-card">
+          <div class="position-info">
+            <div class="position-title">Unarmed Security Officer</div>
+            <div class="position-meta">
+              <span class="position-tag highlight">Level II Licensed</span>
+              <span class="position-tag">Full-Time / Part-Time / On-Call</span>
+              <span class="position-tag">Rio Grande Valley</span>
+            </div>
+          </div>
+          <a href="CJC_Security_Fillable_Application.pdf" download class="apply-btn-sm">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Apply Now
+          </a>
+        </div>
+
+        <div class="position-card">
+          <div class="position-info">
+            <div class="position-title">Patrol Officer — Mobile Unit</div>
+            <div class="position-meta">
+              <span class="position-tag highlight">Level II/III Licensed</span>
+              <span class="position-tag">Full-Time</span>
+              <span class="position-tag">Valid TX Driver License Required</span>
+            </div>
+          </div>
+          <a href="CJC_Security_Fillable_Application.pdf" download class="apply-btn-sm">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Apply Now
+          </a>
+        </div>
+
+        <div class="position-card">
+          <div class="position-info">
+            <div class="position-title">Site Supervisor</div>
+            <div class="position-meta">
+              <span class="position-tag highlight">3+ Years Experience</span>
+              <span class="position-tag">Full-Time</span>
+              <span class="position-tag">Leadership Role</span>
+            </div>
+          </div>
+          <a href="CJC_Security_Fillable_Application.pdf" download class="apply-btn-sm">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Apply Now
+          </a>
+        </div>
+
+        <div class="position-card">
+          <div class="position-info">
+            <div class="position-title">Investigator</div>
+            <div class="position-meta">
+              <span class="position-tag highlight">PI License or LE Background</span>
+              <span class="position-tag">Part-Time / Contract</span>
+              <span class="position-tag">Edinburg, TX</span>
+            </div>
+          </div>
+          <a href="CJC_Security_Fillable_Application.pdf" download class="apply-btn-sm">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Apply Now
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLICATION DOWNLOAD -->
+  <section class="apply-section" aria-labelledby="apply-heading">
+    <div class="container">
+      <div class="apply-inner">
+        <div class="apply-left">
+          <span class="section-label" style="color:var(--color-gold);">How to Apply</span>
+          <h2 id="apply-heading">Download &<br/><span class="gold">Submit Your Application</span></h2>
+          <p>Download our official fillable PDF application, complete all sections, and email your completed application along with all required documents to us. Incomplete applications will not be processed.</p>
+
+          <div class="required-docs">
+            <h4>Required Documents — Submit with Application</h4>
+            <div class="doc-list">
+              <div class="doc-item">Valid Texas Driver License (current, unexpired)</div>
+              <div class="doc-item">TXDPS-issued Security Officer Pocket Card (Level II or higher)</div>
+              <div class="doc-item">All security training certificates (Level II Classroom, Firearms Proficiency, etc.)</div>
+              <div class="doc-item">Any additional professional licenses or endorsements issued by TXDPS</div>
+            </div>
+          </div>
+
+          <div class="apply-actions">
+            <a href="CJC_Security_Fillable_Application.pdf" download="CJC_Security_Fillable_Application.pdf" class="download-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download Application (PDF)
+            </a>
+            <a href="#online-application" class="btn-secondary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+              Or Apply Online
+            </a>
+          </div>
+          <p style="font-size:var(--text-xs); color:color-mix(in oklab, #fff 40%, transparent); margin-top:var(--space-4);">
+            Email completed application + required documents to: <strong style="color:var(--color-gold);">contact@cjcsecuritytx.com</strong>
+          </p>
+        </div>
+
+        <div class="pdf-preview-card" aria-label="PDF application details">
+          <div class="pdf-icon" aria-hidden="true">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <h3>CJC Security Employment Application</h3>
+          <p>Official 3-page fillable PDF. Complete using Adobe Acrobat or any PDF viewer.</p>
+          <div class="pdf-pages">
+            <span class="pdf-page-badge">Page 1 — Personal Info & Position</span>
+            <span class="pdf-page-badge">Page 2 — Licenses & Employment</span>
+            <span class="pdf-page-badge">Page 3 — Background & References</span>
+          </div>
+          <a href="CJC_Security_Fillable_Application.pdf" download="CJC_Security_Fillable_Application.pdf" class="download-btn" style="margin-top:var(--space-2);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ONLINE APPLICATION FORM -->
+  <section class="online-apply-section" id="online-application" aria-labelledby="online-apply-heading">
+    <div class="container">
+      <div class="online-apply-wrap">
+        <span class="section-label" style="color:var(--color-gold);">Apply Online</span>
+        <h2 id="online-apply-heading">Quick <span class="gold">Online Application</span></h2>
+        <p class="lead">Prefer to apply online? Complete this form and we'll follow up to collect your license documents and schedule a screening interview. You can still upload or email the full PDF later.</p>
+
+        <form id="application-form" class="apply-form" action="https://formspree.io/f/moeqnzaz" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="New Employment Application — CJC Security Website" />
+          <input type="hidden" name="form_type" value="Employment Application" />
+
+          <!-- Honeypot -->
+          <div style="position:absolute;left:-9999px;top:-9999px;" aria-hidden="true">
+            <input type="text" name="_gotcha" id="apply-hp" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="a-first-name">First Name <span class="required">*</span></label>
+              <input type="text" id="a-first-name" name="first_name" required autocomplete="given-name" placeholder="John" />
+              <span class="field-error" id="a-err-first-name"></span>
+            </div>
+            <div class="form-group">
+              <label for="a-last-name">Last Name <span class="required">*</span></label>
+              <input type="text" id="a-last-name" name="last_name" required autocomplete="family-name" placeholder="Smith" />
+              <span class="field-error" id="a-err-last-name"></span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="a-email">Email Address <span class="required">*</span></label>
+              <input type="email" id="a-email" name="email" required autocomplete="email" placeholder="john@email.com" />
+              <span class="field-error" id="a-err-email"></span>
+            </div>
+            <div class="form-group">
+              <label for="a-phone">Phone / Cell <span class="required">*</span></label>
+              <input type="tel" id="a-phone" name="phone" required autocomplete="tel" placeholder="(956) 555-0100" />
+              <span class="field-error" id="a-err-phone"></span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="a-city">City <span class="required">*</span></label>
+              <input type="text" id="a-city" name="city" required autocomplete="address-level2" placeholder="Raymondville" />
+              <span class="field-error" id="a-err-city"></span>
+            </div>
+            <div class="form-group">
+              <label for="a-region">Preferred Work Region <span class="required">*</span></label>
+              <select id="a-region" name="region" required>
+                <option value="" disabled selected>Select region…</option>
+                <option value="south-texas">South Texas (RGV / Laredo / Corpus)</option>
+                <option value="central">Central Texas (San Antonio / Abilene)</option>
+                <option value="west-texas">West Texas (El Paso / Lubbock)</option>
+                <option value="north-texas">North Texas (Dallas / Fort Worth)</option>
+                <option value="any">Any / Willing to Travel</option>
+              </select>
+              <span class="field-error" id="a-err-region"></span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="a-position">Position Applying For <span class="required">*</span></label>
+              <select id="a-position" name="position" required>
+                <option value="" disabled selected>Select position…</option>
+                <option value="unarmed-guard">Unarmed Security Officer (Level II)</option>
+                <option value="armed-guard">Armed Security Officer (Level III)</option>
+                <option value="personal-protection">Personal Protection Officer (Level IV)</option>
+                <option value="patrol-officer">Patrol Officer</option>
+                <option value="school-security">School / Campus Security</option>
+                <option value="event-security">Event Security</option>
+                <option value="investigator">Private Investigator</option>
+                <option value="supervisor">Supervisor / Field Manager</option>
+                <option value="other">Other</option>
+              </select>
+              <span class="field-error" id="a-err-position"></span>
+            </div>
+            <div class="form-group">
+              <label for="a-license-level">TXDPS License Level <span class="required">*</span></label>
+              <select id="a-license-level" name="license_level" required>
+                <option value="" disabled selected>Select license…</option>
+                <option value="level-ii">Level II — Non-Commissioned</option>
+                <option value="level-iii">Level III — Commissioned (Armed)</option>
+                <option value="level-iv">Level IV — Personal Protection</option>
+                <option value="pi">Private Investigator</option>
+                <option value="in-training">In Training / Enrolled</option>
+                <option value="none">None Yet</option>
+              </select>
+              <span class="field-error" id="a-err-license-level"></span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="a-license-number">Pocket Card / License Number</label>
+              <input type="text" id="a-license-number" name="license_number" autocomplete="off" placeholder="e.g. 12345678" />
+              <span class="form-note">Leave blank if you don't have one yet.</span>
+            </div>
+            <div class="form-group">
+              <label for="a-experience">Years of Security / Law Enforcement Experience <span class="required">*</span></label>
+              <select id="a-experience" name="experience" required>
+                <option value="" disabled selected>Select…</option>
+                <option value="none">None</option>
+                <option value="less-than-1">Less than 1 year</option>
+                <option value="1-3">1–3 years</option>
+                <option value="3-5">3–5 years</option>
+                <option value="5-10">5–10 years</option>
+                <option value="10-plus">10+ years</option>
+              </select>
+              <span class="field-error" id="a-err-experience"></span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="a-availability">Availability <span class="required">*</span></label>
+              <select id="a-availability" name="availability" required>
+                <option value="" disabled selected>Select…</option>
+                <option value="immediate">Available Immediately</option>
+                <option value="2-weeks">Within 2 weeks</option>
+                <option value="1-month">Within 1 month</option>
+                <option value="flexible">Flexible</option>
+              </select>
+              <span class="field-error" id="a-err-availability"></span>
+            </div>
+            <div class="form-group">
+              <label for="a-shifts">Shift Preference</label>
+              <select id="a-shifts" name="shift_preference">
+                <option value="any">Any Shift</option>
+                <option value="day">Day Shift</option>
+                <option value="evening">Evening Shift</option>
+                <option value="overnight">Overnight / Graveyard</option>
+                <option value="weekends">Weekends Only</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="a-notes">Additional Notes (certifications, prior employers, references, etc.)</label>
+            <textarea id="a-notes" name="notes" rows="5" placeholder="Tell us about your background, certifications, prior security or law-enforcement employers, and anything else we should know."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="a-consent" style="flex-direction:row; display:flex; align-items:flex-start; gap:var(--space-3); text-transform:none; letter-spacing:normal; font-weight:400; font-size:var(--text-sm); color:var(--color-text);">
+              <input type="checkbox" id="a-consent" name="consent" required style="width:18px; height:18px; margin-top:2px; flex-shrink:0;" />
+              <span>I certify that the information provided is true and complete, and I authorize CJC Security &amp; Investigation LLC to contact me regarding this application and conduct any background verification required for licensing. <span class="required">*</span></span>
+            </label>
+            <span class="field-error" id="a-err-consent"></span>
+          </div>
+
+          <button type="submit" class="apply-submit">Submit Application</button>
+          <p class="form-note" style="margin-top:var(--space-4);">After submitting, please email your completed PDF application and license documents to <strong style="color:var(--color-gold);">contact@cjcsecuritytx.com</strong> to complete your file.</p>
+        </form>
+
+        <div class="apply-success" id="apply-success" role="alert" aria-live="polite">
+          <div class="check-circle" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h4>Application Received</h4>
+          <p>Thank you. We received your application and will follow up within 2–3 business days. Please also email your completed PDF application and license documents to <strong style="color:var(--color-gold);">contact@cjcsecuritytx.com</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+  (function(){
+    var form = document.getElementById('application-form');
+    if (!form) return;
+    var successBlock = document.getElementById('apply-success');
+
+    var requiredFields = [
+      { id: 'a-first-name',    name: 'First name is required.' },
+      { id: 'a-last-name',     name: 'Last name is required.' },
+      { id: 'a-email',         name: 'A valid email is required.' },
+      { id: 'a-phone',         name: 'A phone number is required.' },
+      { id: 'a-city',          name: 'City is required.' },
+      { id: 'a-region',        name: 'Please select a region.' },
+      { id: 'a-position',      name: 'Please select a position.' },
+      { id: 'a-license-level', name: 'Please select your license level.' },
+      { id: 'a-experience',    name: 'Please select your experience.' },
+      { id: 'a-availability',  name: 'Please select your availability.' },
+      { id: 'a-consent',       name: 'You must certify and consent to continue.' }
+    ];
+
+    function clearError(id){
+      var el = document.getElementById(id);
+      var err = document.getElementById('a-err-' + id.replace(/^a-/, ''));
+      if (el) el.classList.remove('invalid');
+      if (err) err.textContent = '';
+    }
+
+    requiredFields.forEach(function(f){
+      var el = document.getElementById(f.id);
+      if (!el) return;
+      var ev = (el.tagName === 'SELECT' || el.type === 'checkbox') ? 'change' : 'input';
+      el.addEventListener(ev, function(){ clearError(f.id); });
+    });
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      if (document.getElementById('apply-hp').value) return;
+
+      var valid = true;
+      requiredFields.forEach(function(f){
+        var el  = document.getElementById(f.id);
+        var err = document.getElementById('a-err-' + f.id.replace(/^a-/, ''));
+        var ok  = true;
+        if (!el) return;
+        if (el.type === 'checkbox') { ok = el.checked; }
+        else { ok = !!(el.value && el.value.trim()); }
+        if (ok && f.id === 'a-email') ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim());
+        if (ok && f.id === 'a-phone') ok = el.value.replace(/\D/g,'').length >= 10;
+        if (!ok) {
+          valid = false;
+          el.classList.add('invalid');
+          if (err) err.textContent = f.name;
+        }
+      });
+
+      if (!valid) {
+        var firstBad = form.querySelector('.invalid');
+        if (firstBad) firstBad.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+
+      var submitBtn = form.querySelector('.apply-submit');
+      var originalText = submitBtn ? submitBtn.innerHTML : '';
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.innerHTML = 'Sending…'; }
+
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(function(response){
+        if (response.ok) {
+          form.style.display = 'none';
+          successBlock.classList.add('visible');
+          successBlock.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          response.json().then(function(body){
+            var msg = (body && body.errors && body.errors.map(function(x){return x.message;}).join(', ')) || 'There was a problem submitting your application. Please email contact@cjcsecuritytx.com.';
+            alert(msg);
+            if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = originalText; }
+          }).catch(function(){
+            alert('There was a problem submitting your application. Please email contact@cjcsecuritytx.com.');
+            if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = originalText; }
+          });
+        }
+      })
+      .catch(function(){
+        alert('Network error. Please check your connection and try again, or email contact@cjcsecuritytx.com.');
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = originalText; }
+      });
+    });
+  })();
+  </script>
+
+  <!-- HOW TO APPLY STEPS -->
+  <section class="how-to-apply" aria-labelledby="steps-heading">
+    <div class="container">
+      <div class="section-header" style="text-align:center;">
+        <span class="section-label">Application Process</span>
+        <h2 class="section-title" id="steps-heading">4 Simple Steps</h2>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num" aria-hidden="true">1</div>
+          <h4>Download PDF</h4>
+          <p>Download the fillable application and open it in Adobe Acrobat or your PDF viewer.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num" aria-hidden="true">2</div>
+          <h4>Complete All Sections</h4>
+          <p>Fill out all 9 sections completely. Incomplete applications are not processed.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num" aria-hidden="true">3</div>
+          <h4>Gather Documents</h4>
+          <p>Scan or photograph your TX DL, TXDPS Pocket Card, and all training certificates.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num" aria-hidden="true">4</div>
+          <h4>Email Everything</h4>
+          <p>Send your completed application and all documents to contact@cjcsecuritytx.com.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="site-logo" style="color:#fff;" aria-label="CJC Security Home">
+        <img src="images/cjc-logo-2026-sm.png" alt="CJC Security &amp; Investigation LLC" class="logo-img" style="height:54px;width:auto;" />
+      </a>
+      <p>Licensed, bonded &amp; insured statewide security and investigation services across Texas — South Texas, San Antonio, Abilene, El Paso, Lubbock, and Dallas-Fort Worth. Founded 2023.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <nav class="footer-links">
+        <a href="services.html#armed">Armed Security</a>
+        <a href="services.html#unarmed">Unarmed Guards</a>
+        <a href="services.html#school">School Safety</a>
+        <a href="services.html#k9">K9 Services</a>
+      </nav>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <nav class="footer-links">
+        <a href="about.html">About Us</a>
+        <a href="regions.html">Service Areas</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html">Contact</a>
+        <a href="mailto:contact@cjcsecuritytx.com">contact@cjcsecuritytx.com</a>
+      </nav>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 CJC Security & Investigation LLC. All rights reserved.</span>
+    <a href="mailto:contact@cjcsecuritytx.com">contact@cjcsecuritytx.com</a>
+  </div>
+</footer>
+
+<script>
+const header = document.getElementById('site-header');
+window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 20); }, { passive: true });
+(function () {
+  const t = document.querySelector('[data-theme-toggle]'), r = document.documentElement;
+  let d = 'dark'; r.setAttribute('data-theme', d);
+  if (t) t.addEventListener('click', () => {
+    d = d === 'dark' ? 'light' : 'dark'; r.setAttribute('data-theme', d);
+    t.innerHTML = d === 'dark' ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>' : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+  });
+})();
+const btn = document.getElementById('mobile-menu-btn');
+const nav = document.getElementById('mobile-nav');
+btn.addEventListener('click', () => { const open = nav.classList.toggle('open'); btn.setAttribute('aria-expanded', open); });
+</script>
+<script src="js/chatbot.js"></script>
+</body>
+</html>

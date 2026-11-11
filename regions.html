@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Service Areas | CJC Security & Investigation LLC — Statewide Texas Coverage</title>
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <meta name="description" content="CJC Security & Investigation LLC provides licensed security services statewide across Texas — South Texas, San Antonio, Abilene, El Paso, Lubbock, and expanding to Dallas-Fort Worth." />
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .page-hero {
+      background: var(--color-iron);
+      padding-block: clamp(var(--space-16), 12vw, var(--space-32));
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 50% 50%, color-mix(in oklab, var(--color-gold) 6%, transparent), transparent 70%);
+    }
+    .page-hero-content { position: relative; z-index: 1; }
+    .page-hero h1 { font-size: var(--text-2xl); color: #fff; margin-bottom: var(--space-4); }
+    .page-hero h1 .gold { color: var(--color-gold); }
+    .page-hero p { font-size: var(--text-lg); color: color-mix(in oklab, #fff 65%, transparent); max-width: 55ch; margin-inline: auto; }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: var(--space-4);
+    }
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--color-primary);
+      border-radius: 2px;
+    }
+
+    /* Texas map stat bar */
+    .stats-bar {
+      background: var(--color-surface);
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+      padding-block: var(--space-8);
+    }
+    .stats-inner {
+      display: flex;
+      justify-content: center;
+      gap: clamp(var(--space-8), 6vw, var(--space-20));
+      flex-wrap: wrap;
+    }
+    .stat-item { text-align: center; }
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl));
+      font-weight: 700;
+      color: var(--color-gold);
+      display: block;
+    }
+    .stat-label {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      margin-top: var(--space-1);
+    }
+
+    /* Region anchor offset for sticky header */
+    .region-anchor {
+      display: block;
+      position: relative;
+      top: -90px;
+      visibility: hidden;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-4) var(--space-8);
+      background: var(--color-primary);
+      color: #000;
+      font-family: var(--font-display);
+      font-size: var(--text-base);
+      font-weight: 700;
+      border-radius: var(--radius-lg);
+      text-decoration: none;
+      transition: background var(--transition-interactive), transform var(--transition-interactive);
+    }
+    .btn-primary:hover { background: var(--color-gold-light); transform: translateY(-2px); }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-3) var(--space-6);
+      border: 1.5px solid var(--color-primary);
+      color: var(--color-primary);
+      font-family: var(--font-display);
+      font-size: var(--text-sm);
+      font-weight: 700;
+      border-radius: var(--radius-lg);
+      text-decoration: none;
+      transition: background var(--transition-interactive), color var(--transition-interactive);
+    }
+    .btn-outline:hover {
+      background: var(--color-primary);
+      color: #000;
+    }
+
+    .page-cta {
+      padding-block: clamp(var(--space-12), 8vw, var(--space-20));
+      background: var(--color-iron);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 50% 100% at 50% 100%, color-mix(in oklab, var(--color-gold) 8%, transparent), transparent 70%);
+    }
+    .page-cta-content { position: relative; z-index: 1; }
+    .page-cta h2 { font-family: var(--font-display); font-size: clamp(var(--text-2xl), 4vw, var(--text-3xl)); font-weight: 700; color: #fff; margin-bottom: var(--space-4); }
+    .page-cta h2 .gold { color: var(--color-gold); }
+    .page-cta p { font-size: var(--text-base); color: color-mix(in oklab, #fff 65%, transparent); max-width: 50ch; margin-inline: auto; margin-bottom: var(--space-8); }
+  </style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo" aria-label="CJC Security Home">
+      <img src="images/cjc-logo-2026-sm.png" alt="CJC Security &amp; Investigation LLC" class="logo-img" />
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="regions.html" class="nav-link active">Service Areas</a>
+      <a href="gallery.html" class="nav-link">Gallery</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="careers.html" class="nav-link">Careers</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="contact.html" class="nav-cta">Deploy Now</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" aria-label="Toggle light/dark mode" data-theme-toggle>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="services.html" class="nav-link">Services</a>
+    <a href="regions.html" class="nav-link active">Service Areas</a>
+    <a href="gallery.html" class="nav-link">Gallery</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="careers.html" class="nav-link">Careers</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+    <a href="contact.html" class="nav-cta">Deploy Now</a>
+  </nav>
+</header>
+
+<!-- ── PAGE HERO ── -->
+<section class="page-hero">
+  <div class="page-hero-content container">
+    <span class="section-label" style="justify-content:center;">Statewide Coverage</span>
+    <h1>Serving All of <span class="gold">Texas</span></h1>
+    <p>CJC Security &amp; Investigation LLC operates across four regions of Texas — bringing the same licensed, professional-grade security to every community we serve.</p>
+  </div>
+</section>
+
+<!-- ── STATS BAR ── -->
+<div class="stats-bar">
+  <div class="stats-inner container">
+    <div class="stat-item">
+      <span class="stat-number">4</span>
+      <p class="stat-label">Texas Regions</p>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">8+</span>
+      <p class="stat-label">Cities Served</p>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">20+</span>
+      <p class="stat-label">Years Experience</p>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">Licensed</span>
+      <p class="stat-label">Texas DPS &amp; Federal</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── REGION 1: SOUTH TEXAS ── -->
+<span class="region-anchor" id="south-texas"></span>
+<div class="region-detail">
+  <div class="container region-detail-inner">
+    <div class="region-detail-left">
+      <span class="region-status-badge active">Active — Home Region</span>
+      <h2>South <span class="gold">Texas</span></h2>
+      <div class="region-cities-large">
+        <span class="city-tag">McAllen</span>
+        <span class="city-tag">Edinburg</span>
+        <span class="city-tag">Rio Grande Valley</span>
+        <span class="city-tag">Laredo</span>
+        <span class="city-tag">Corpus Christi</span>
+      </div>
+      <a href="contact.html" class="btn-primary">Request Deployment</a>
+    </div>
+    <div class="region-detail-right">
+      <p>South Texas is our home and the foundation of everything we've built. CJC Security &amp; Investigation LLC was founded in Edinburg, TX in 2023 and has been proudly serving the Rio Grande Valley, Laredo, and Corpus Christi with armed and unarmed security, K9 services, school safety, mobile patrol, and private investigations.</p>
+      <p>With deep roots in the region and a leadership team with over 20 years of law enforcement experience — including a decade as a Hidalgo County Sheriff's deputy — we understand the unique security landscape of South Texas better than anyone.</p>
+      <ul class="region-services-list">
+        <li>Armed &amp; Unarmed Security Guards</li>
+        <li>K9 Unit Detection Services</li>
+        <li>School Safety Programs</li>
+        <li>Mobile Patrol</li>
+        <li>Private Investigations</li>
+        <li>Counter-Surveillance Sweeps</li>
+        <li>Executive Protection</li>
+        <li>Event Security</li>
+      </ul>
+      <a href="contact.html" class="btn-outline">Request Deployment Assessment — South Texas</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── REGION 2: CENTRAL / SAN ANTONIO ── -->
+<span class="region-anchor" id="central"></span>
+<div class="region-detail alt">
+  <div class="container region-detail-inner">
+    <div class="region-detail-left">
+      <span class="region-status-badge active">Active</span>
+      <h2>Central Texas &amp; <span class="gold">San Antonio</span></h2>
+      <div class="region-cities-large">
+        <span class="city-tag">San Antonio</span>
+        <span class="city-tag">Abilene</span>
+        <span class="city-tag">Surrounding Areas</span>
+      </div>
+      <a href="contact.html" class="btn-primary">Request Deployment</a>
+    </div>
+    <div class="region-detail-right">
+      <p>CJC Security &amp; Investigation LLC actively serves the San Antonio metro and the Abilene area with the same caliber of professional security that defines our South Texas operations. Central Texas clients benefit from our full range of services, backed by licensed, bonded, and insured personnel.</p>
+      <p>San Antonio's diverse commercial, residential, and event landscape demands versatile security solutions. Our team is equipped to handle everything from long-term post assignments to high-profile event deployments.</p>
+      <ul class="region-services-list">
+        <li>Armed &amp; Unarmed Security Guards</li>
+        <li>Mobile Patrol Services</li>
+        <li>Event Security</li>
+        <li>Executive Protection</li>
+        <li>Private Investigations</li>
+        <li>Counter-Surveillance Sweeps</li>
+        <li>Commercial Property Security</li>
+        <li>K9 Services (available)</li>
+      </ul>
+      <a href="contact.html" class="btn-outline">Request Deployment Assessment — Central Texas</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── REGION 3: WEST TEXAS ── -->
+<span class="region-anchor" id="west-texas"></span>
+<div class="region-detail">
+  <div class="container region-detail-inner">
+    <div class="region-detail-left">
+      <span class="region-status-badge active">Active</span>
+      <h2>West <span class="gold">Texas</span></h2>
+      <div class="region-cities-large">
+        <span class="city-tag">El Paso</span>
+        <span class="city-tag">Lubbock</span>
+        <span class="city-tag">Surrounding Areas</span>
+      </div>
+      <a href="contact.html" class="btn-primary">Request Deployment</a>
+    </div>
+    <div class="region-detail-right">
+      <p>West Texas is one of the most strategically important regions in the state — and CJC Security &amp; Investigation LLC is here to serve it. From the border communities of El Paso to the commercial corridors of Lubbock, we provide professional security personnel who understand the demands of this region.</p>
+      <p>El Paso's proximity to the border and Lubbock's growing business community both require security professionals with real-world experience, strong situational awareness, and a commitment to professionalism. That's exactly what our team delivers.</p>
+      <ul class="region-services-list">
+        <li>Armed &amp; Unarmed Security Guards</li>
+        <li>Mobile Patrol Services</li>
+        <li>Commercial &amp; Industrial Security</li>
+        <li>Event Security</li>
+        <li>Executive Protection</li>
+        <li>Private Investigations</li>
+        <li>Counter-Surveillance Sweeps</li>
+        <li>K9 Services (available)</li>
+      </ul>
+      <a href="contact.html" class="btn-outline">Request Deployment Assessment — West Texas</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── REGION 4: NORTH TEXAS / DFW ── -->
+<span class="region-anchor" id="north-texas"></span>
+<div class="region-detail alt">
+  <div class="container region-detail-inner">
+    <div class="region-detail-left">
+      <span class="region-status-badge expanding">Expanding Now</span>
+      <h2>North Texas &amp; <span class="gold">DFW</span></h2>
+      <div class="region-cities-large">
+        <span class="city-tag">Dallas</span>
+        <span class="city-tag">Fort Worth</span>
+        <span class="city-tag">Metroplex Area</span>
+      </div>
+      <a href="contact.html" class="btn-primary">Inquire About DFW</a>
+    </div>
+    <div class="region-detail-right">
+      <p>CJC Security &amp; Investigation LLC is actively expanding into the Dallas-Fort Worth Metroplex — one of the fastest-growing markets in the country. As we build our North Texas operations, we are accepting inquiries from clients who need reliable, professional-grade security in the DFW area.</p>
+      <p>Whether you're a business, event organizer, or individual seeking personal protection in Dallas or Fort Worth, contact us now to discuss your needs. Early clients in North Texas will receive our full attention and customized security planning from our leadership team directly.</p>
+      <ul class="region-services-list">
+        <li>Armed &amp; Unarmed Security Guards</li>
+        <li>Event Security</li>
+        <li>Executive Protection</li>
+        <li>Mobile Patrol</li>
+        <li>Private Investigations</li>
+        <li>Counter-Surveillance Sweeps</li>
+        <li>Corporate Security Consulting</li>
+        <li>K9 Services (available)</li>
+      </ul>
+      <a href="contact.html" class="btn-outline">Request Deployment Assessment — DFW</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── CTA ── -->
+<section class="page-cta">
+  <div class="container page-cta-content">
+    <span class="section-label" style="justify-content:center; color:var(--color-gold);">Statewide. Professional. Ready.</span>
+    <h2>Your Threat Window <span class="gold">Is Open Now</span></h2>
+    <p>Tell us your location and what you need protected — we'll deliver a customized deployment assessment within 24 hours.</p>
+    <a href="contact.html" class="btn-primary">
+      Request Deployment Assessment
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" aria-label="CJC Security Home">
+        <img src="images/cjc-logo-2026-sm.png" alt="CJC Security &amp; Investigation LLC" style="height:54px;width:auto;" />
+      </a>
+      <p>Licensed, bonded, and insured statewide security and investigation services across Texas. Founded 2023. UEI: NE5LXHD56355 | CAGE: 0G8Q1</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <nav class="footer-links" aria-label="Services navigation">
+        <a href="services.html#armed">Armed Security</a>
+        <a href="services.html#unarmed">Unarmed Guards</a>
+        <a href="services.html#school">School Safety</a>
+        <a href="services.html#investigations">Investigations</a>
+        <a href="services.html#counter-surveillance">Counter-Surveillance</a>
+        <a href="services.html#patrol">Mobile Patrol</a>
+        <a href="services.html#executive">Executive Protection</a>
+        <a href="services.html#k9">K9 Services</a>
+      </nav>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <nav class="footer-links" aria-label="Company navigation">
+        <a href="about.html">About Us</a>
+        <a href="regions.html">Service Areas</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html#quote">Request Assessment</a>
+        <a href="mailto:contact@cjcsecuritytx.com">contact@cjcsecuritytx.com</a>
+      </nav>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 CJC Security &amp; Investigation LLC. All rights reserved. Edinburg, TX.</span>
+    <a href="mailto:contact@cjcsecuritytx.com">contact@cjcsecuritytx.com</a>
+  </div>
+</footer>
+
+<script>
+const header = document.getElementById('site-header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 20);
+}, { passive: true });
+
+(function () {
+  const t = document.querySelector('[data-theme-toggle]'), r = document.documentElement;
+  if (!t) return;
+  t.addEventListener('click', () => {
+    const next = r.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    r.setAttribute('data-theme', next);
+  });
+})();
+
+(function () {
+  const btn = document.getElementById('mobile-menu-btn');
+  const nav = document.getElementById('mobile-nav');
+  if (!btn || !nav) return;
+  btn.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  });
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    nav.classList.remove('open');
+    btn.setAttribute('aria-expanded', false);
+  }));
+})();
+</script>
+<script src="js/chatbot.js"></script>
+</body>
+</html>

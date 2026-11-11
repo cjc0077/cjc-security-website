@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | CJC Security & Investigation LLC</title>
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <meta name="description" content="Meet the team behind CJC Security & Investigation LLC — founded by a 20-year law enforcement veteran, now delivering licensed statewide security services across all of Texas." />
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .page-hero {
+      background: var(--color-iron);
+      padding-block: clamp(var(--space-16), 12vw, var(--space-32));
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 50% 50%, color-mix(in oklab, var(--color-gold) 6%, transparent), transparent 70%);
+    }
+    .page-hero-content { position: relative; z-index: 1; }
+    .page-hero h1 { font-size: var(--text-2xl); color: #fff; margin-bottom: var(--space-4); }
+    .page-hero h1 .gold { color: var(--color-gold); }
+    .page-hero p { font-size: var(--text-lg); color: color-mix(in oklab, #fff 65%, transparent); max-width: 55ch; margin-inline: auto; }
+
+    .about-story {
+      padding-block: clamp(var(--space-16), 10vw, var(--space-32));
+    }
+    .about-story-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-20);
+      align-items: center;
+    }
+    .about-story-left h2 { font-size: var(--text-2xl); color: var(--color-text); margin-bottom: var(--space-6); }
+    .about-story-left h2 .gold { color: var(--color-primary); }
+    .about-story-left p { font-size: var(--text-base); color: var(--color-text-muted); line-height: 1.75; margin-bottom: var(--space-5); max-width: 52ch; }
+    .about-quote {
+      background: var(--color-surface);
+      border-left: 3px solid var(--color-primary);
+      padding: var(--space-6) var(--space-8);
+      border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+      margin-top: var(--space-8);
+    }
+    .about-quote p { font-size: var(--text-lg); font-style: italic; color: var(--color-text); line-height: 1.6; margin-bottom: var(--space-3); }
+    .about-quote cite { font-size: var(--text-sm); color: var(--color-text-muted); font-style: normal; font-weight: 600; }
+
+    .credentials-panel {
+      background: var(--color-iron);
+      border-radius: var(--radius-xl);
+      padding: var(--space-10);
+      color: #fff;
+    }
+    .credentials-panel h3 { font-size: var(--text-xl); color: var(--color-gold); margin-bottom: var(--space-6); }
+    .credential-list { display: flex; flex-direction: column; gap: var(--space-4); }
+    .credential-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-4);
+      padding-bottom: var(--space-4);
+      border-bottom: 1px solid color-mix(in oklab, #fff 10%, transparent);
+    }
+    .credential-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .credential-icon {
+      width: 40px; height: 40px; flex-shrink: 0;
+      background: color-mix(in oklab, var(--color-gold) 12%, transparent);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-gold);
+    }
+    .credential-item h4 { font-family: var(--font-display); font-size: var(--text-sm); font-weight: 600; color: #fff; margin-bottom: var(--space-1); }
+    .credential-item p { font-size: var(--text-xs); color: color-mix(in oklab, #fff 55%, transparent); line-height: 1.5; }
+
+    .values-section { padding-block: clamp(var(--space-12), 8vw, var(--space-24)); background: var(--color-surface); }
+    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); margin-top: var(--space-12); }
+    .value-card {
+      background: var(--color-surface-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      text-align: center;
+    }
+    .value-icon {
+      width: 60px; height: 60px;
+      background: color-mix(in oklab, var(--color-primary) 10%, transparent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-primary);
+      margin: 0 auto var(--space-5);
+    }
+    .value-card h3 { font-size: var(--text-base); font-weight: 700; color: var(--color-text); margin-bottom: var(--space-3); }
+    .value-card p { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.6; }
+
+    @media (max-width: 900px) {
+      .about-story-inner { grid-template-columns: 1fr; gap: var(--space-10); }
+      .values-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) { .values-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo" aria-label="CJC Security Home">
+      <img src="images/cjc-logo-2026-sm.png" alt="CJC Security &amp; Investigation LLC" class="logo-img" />
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="regions.html" class="nav-link">Service Areas</a>
+    <a href="gallery.html" class="nav-link">Gallery</a>
+      <a href="about.html" class="nav-link active">About</a>
+      <a href="careers.html" class="nav-link">Careers</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="contact.html" class="nav-cta">Deploy Now</a>
+    </nav>
+    <button class="theme-toggle" data-theme-toggle aria-label="Toggle theme">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+    </button>
+    <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="services.html" class="nav-link">Services</a>
+    <a href="regions.html" class="nav-link">Service Areas</a>
+    <a href="gallery.html" class="nav-link">Gallery</a>
+    <a href="about.html" class="nav-link active">About</a>
+    <a href="careers.html" class="nav-link">Careers</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+    <a href="contact.html" class="nav-cta">Deploy Now</a>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="container--narrow">
+    <div class="page-hero-content">
+      <span class="section-label" style="color:var(--color-gold);">Our Story</span>
+      <h1>About <span class="gold">CJC Security</span></h1>
+      <p>Founded by a veteran law enforcement officer to bring real-world expertise, discipline, and integrity to private security — now serving clients statewide across Texas.</p>
+    </div>
+  </div>
+</section>
+
+<main>
+  <section class="about-story">
+    <div class="container">
+      <div class="about-story-inner">
+        <div class="about-story-left">
+          <span class="section-label">Who We Are</span>
+          <h2>Experience You Can<br/><span class="gold">Trust. Results You'll See.</span></h2>
+          <p>CJC Security & Investigation LLC was established in 2023 in Edinburg, Texas, to fill a gap in the security market — a provider that operates with the discipline, training standards, and accountability of a law enforcement agency. What started in the Rio Grande Valley has grown into a statewide operation serving clients across Texas.</p>
+          <p>Our founder brings over 20 years of professional law enforcement experience, including a decade as a Hidalgo County Sheriff's deputy. That background shapes everything we do: how we hire, how we train, how we respond, and how we report.</p>
+          <p>We now serve businesses, schools, individuals, and organizations across South Texas, San Antonio, Abilene, El Paso, Lubbock, and the Dallas-Fort Worth area — delivering the same high standard of protection statewide.</p>
+          <div class="about-quote">
+            <p>"In law enforcement, you don't get second chances. We bring that same standard of performance to every security assignment we take."</p>
+            <cite>— CJC Security & Investigation LLC, Founder</cite>
+          </div>
+        </div>
+        <div class="about-story-right" id="credentials">
+          <div class="credentials-panel">
+            <h3>Credentials & Qualifications</h3>
+            <div class="credential-list">
+              <div class="credential-item">
+                <div class="credential-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                </div>
+                <div>
+                  <h4>Texas DPS Licensed</h4>
+                  <p>Fully licensed by the Texas Department of Public Safety — Private Security Division. All personnel meet or exceed Texas state requirements.</p>
+                </div>
+              </div>
+              <div class="credential-item">
+                <div class="credential-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <div>
+                  <h4>20+ Years Law Enforcement</h4>
+                  <p>Founder served 20+ years in law enforcement, including 10 years as a Hidalgo County Sheriff's deputy — bringing real-world tactical experience to the private sector.</p>
+                </div>
+              </div>
+              <div class="credential-item">
+                <div class="credential-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                </div>
+                <div>
+                  <h4>Fully Insured & Bonded</h4>
+                  <p>Comprehensive liability insurance and surety bond coverage — protecting our clients and ensuring professional accountability on every assignment.</p>
+                </div>
+              </div>
+              <div class="credential-item">
+                <div class="credential-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                </div>
+                <div>
+                  <h4>School Safety Specialist</h4>
+                  <p>Specialized training in campus security, Texas Senate Bill 11 compliance, threat assessment, and active threat response for K-12 environments.</p>
+                </div>
+              </div>
+              <div class="credential-item">
+                <div class="credential-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/></svg>
+                </div>
+                <div>
+                  <h4>UEI Registered (Federal)</h4>
+                  <p>Registered federal contractor (UEI: NE5LXHD56355, CAGE: 0G8Q1) — eligible for government and municipal security contracts.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="values-section" aria-labelledby="values-heading">
+    <div class="container">
+      <div class="section-header" style="text-align:center;">
+        <span class="section-label">Our Core Values</span>
+        <h2 class="section-title" id="values-heading">How We Operate</h2>
+        <p class="section-subtitle" style="margin-inline:auto;">The same principles that drive excellence in law enforcement guide every decision at CJC Security.</p>
+      </div>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Integrity</h3>
+          <p>We do what we say we'll do. No shortcuts. No excuses. Our word is our bond on every contract and every post.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h3>Professionalism</h3>
+          <p>From appearance to conduct, our officers represent a standard of professionalism that reflects well on your organization.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <h3>Responsiveness</h3>
+          <p>Security incidents don't wait for business hours. We're available 24/7 and respond rapidly when you need us most.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+          </div>
+          <h3>Community First</h3>
+          <p>We're a Texas company through and through. From South Texas to the Panhandle, serving the communities we protect isn't just business — it's personal.
+        </div>
+        <div class="value-card">
+          <div class="value-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          <h3>Continuous Training</h3>
+          <p>Security threats evolve. So does our training. All personnel complete regular refresher courses beyond state minimums.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </div>
+          <h3>Accountability</h3>
+          <p>Every incident is documented. Every action is recorded. Transparent reporting keeps you informed and builds lasting trust.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<section class="contact-cta" aria-labelledby="about-cta-heading">
+  <div class="container">
+    <div class="contact-cta-inner">
+      <span class="section-label" style="color:var(--color-gold);">Work With Us</span>
+      <h2 id="about-cta-heading">Experience the<br/><span class="gold">CJC Difference</span></h2>
+      <p>Let's discuss how our background and expertise can protect your people, property, and peace of mind.</p>
+      <div class="cta-actions" style="margin-top:var(--space-8);">
+        <a href="contact.html" class="btn-primary">Request Deployment Assessment</a>
+        <a href="services.html" class="btn-secondary">View Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="site-logo" style="color:#fff;" aria-label="CJC Security Home">
+        <img src="images/cjc-logo-2026-sm.png" alt="CJC Security &amp; Investigation LLC" class="logo-img" style="height:44px;width:auto;" />
+      </a>
+      <p>Licensed, bonded &amp; insured statewide security and investigation services across Texas — South Texas, San Antonio, Abilene, El Paso, Lubbock, and Dallas-Fort Worth. Founded 2023.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <nav class="footer-links">
+        <a href="services.html#armed">Armed Security</a>
+        <a href="services.html#unarmed">Unarmed Guards</a>
+        <a href="services.html#school">School Safety</a>
+        <a href="services.html#investigations">Investigations</a>
+      </nav>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <nav class="footer-links">
+        <a href="about.html">About Us</a>
+        <a href="regions.html">Service Areas</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html">Contact</a>
+        <a href="mailto:contact@cjcsecuritytx.com">contact@cjcsecuritytx.com</a>
+      </nav>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 CJC Security & Investigation LLC. All rights reserved.</span>
+    <a href="mailto:contact@cjcsecuritytx.com">contact@cjcsecuritytx.com</a>
+  </div>
+</footer>
+
+<script>
+const header = document.getElementById('site-header');
+window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 20); }, { passive: true });
+(function () {
+  const t = document.querySelector('[data-theme-toggle]'), r = document.documentElement;
+  let d = 'dark'; r.setAttribute('data-theme', d);
+  if (t) t.addEventListener('click', () => {
+    d = d === 'dark' ? 'light' : 'dark'; r.setAttribute('data-theme', d);
+    t.innerHTML = d === 'dark' ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>' : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+  });
+})();
+const btn = document.getElementById('mobile-menu-btn');
+const nav = document.getElementById('mobile-nav');
+btn.addEventListener('click', () => { const open = nav.classList.toggle('open'); btn.setAttribute('aria-expanded', open); });
+</script>
+<script src="js/chatbot.js"></script>
+</body>
+</html>
