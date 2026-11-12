@@ -18,7 +18,7 @@
     },
     contact: {
       keywords: ['contact','reach','call','email','phone','talk','speak','get in touch','number','address'],
-      answer: `You can reach CJC Security & Investigation LLC at:\n\n📧 <strong>Email:</strong> <a href="mailto:contact@cjcsecuritytx.com" style="color:var(--color-primary);">contact@cjcsecuritytx.com</a>\n📞 Available 24/7 for urgent requests\n\nOr submit a <a href="contact.html" style="color:var(--color-primary);">Deployment Assessment Request</a> and we'll respond within 24 hours.`
+      answer: `You can reach CJC Security & Investigation LLC at:\n\n📧 <strong>Email:</strong> <a href="mailto:contact@cjcsecuritytx.com" style="color:var(--color-primary);">contact@cjcsecuritytx.com</a>\n📞 <strong>Phone/Text:</strong> <a href="tel:+19567849903" style="color:var(--color-primary);">(956) 784-9903</a> (available 24/7 for urgent requests)\n\nOr submit a <a href="contact.html" style="color:var(--color-primary);">Deployment Assessment Request</a> and we'll respond within 24 hours.`
     },
     careers: {
       keywords: ['job','career','hire','apply','work','employment','application','position','guard','officer','opening','join','hiring'],
